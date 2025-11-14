@@ -22,6 +22,8 @@ You will see the following graph being completed in real time coming from the tr
 
 ![Real-time Streaming Dashboard UI](<Captura desde 2025-11-14 22-45-07.png>)
 
+If you hover a value in the chart you can also see displayed the specific value on a tooltip:
+
 ![See a specific value](<Captura desde 2025-11-14 22-45-48.png>)
 
 
