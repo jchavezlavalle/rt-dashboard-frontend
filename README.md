@@ -1,7 +1,5 @@
-# Real-time Streaming Dashboard UI
-
+# Real-time WebSockets Metrics Dashboard
 This project was made using React + Vite + Typescript and allows the visualization of CPU metrics triggered from the backend side using WebSockets in [this repo](https://github.com/jchavezlavalle/rt-stream-dashboard) 
-
 
 ## Setup
 
