@@ -1,33 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
+import {useWebSocket} from "./useWebSocket";
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const data = useWebSocket("ws://127.0.0.1:3000/ws");
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <><div style={{ padding: 20, fontFamily: "sans-serif" }}>
+      <h1>Real-time WebSockets Metrics Dashboard 📊 </h1>
+      <LineChart width={800} height={400} data={data}>
+        <Line type="monotone" dataKey="value" stroke="#4f46e5" />
+        <CartesianGrid stroke="#aaa" />
+        <XAxis dataKey="timestamp" hide />
+        <YAxis />
+        <Tooltip />
+      </LineChart>
+    </div>
     </>
   )
 }
