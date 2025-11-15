@@ -20,11 +20,9 @@ Remember to have opened another terminal and run the backend here -> [https://gi
 
 You will see the following graph being completed in real time coming from the traffic triggered by the backend:
 
-![Real-time Streaming Dashboard UI](<Captura desde 2025-11-14 22-45-07.png>)
+![Real-time Streaming Dashboard UI](<./src/assets/Captura desde 2025-11-15 17-47-21.png>)
 
-If you hover a value in the chart you can also see displayed the specific value on a tooltip:
 
-![See a specific value](<Captura desde 2025-11-14 22-45-48.png>)
 
 
 
