@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
 import {useWebSocket} from "./useWebSocket";
+import { MetricCards } from './MetricCards';
 
 import './App.css'
 
 function App() {
   const data = useWebSocket("ws://127.0.0.1:3000/ws");
+  const latestValue = data.length > 0 ? data[data.length - 1].value : null;
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
@@ -18,6 +20,8 @@ function App() {
         <p className="text-center text-gray-600 mb-10">
           Streaming live data from CPU/memory metrics obtained through WebSockets ✨
         </p>
+
+        <MetricCards latestValue={latestValue} />
 
         <div className="flex justify-center">
           <LineChart width={700} height={400} data={data}>
