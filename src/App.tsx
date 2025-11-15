@@ -3,6 +3,7 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts"
 import {useWebSocket} from "./useWebSocket";
 import { MetricCards } from './MetricCards';
 import { motion } from "framer-motion";
+import { ThemeToggle } from './ThemeToggle';
 
 
 import './App.css'
@@ -12,8 +13,12 @@ function App() {
   const latestValue = data.length > 0 ? data[data.length - 1].value : null;
 
   return (
+    <>
+    <div className="flex justify-end mb-6">
+        <ThemeToggle />
+      </div>
     <div className="min-h-screen flex items-center justify-center p-6">
-
+      
       <motion.div
         className="absolute top-10 right-10 text-4xl"
         animate={{ y: [0, -10, 0] }}
@@ -28,13 +33,13 @@ function App() {
       >
         🌸
       </motion.div>
-      <div className="bg-white/70 backdrop-blur-xl shadow-2xl rounded-3xl p-10 w-full max-w-4xl border border-white/50">
+      <div className="bg-white/70 dark:bg-violet-900/80 backdrop-blur-xl shadow-2xl rounded-3xl p-10 w-full max-w-4xl border border-white/50">
 
-        <h1 className="text-4xl font-extrabold text-center mb-6 bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent">
+        <h1 className="text-4xl dark:text-white font-extrabold text-center mb-6 bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent">
         Real-Time Metrics Dashboard
         </h1>
 
-        <p className="text-center text-gray-600 mb-10">
+        <p className="text-center text-gray-600 mb-10 dark:text-white">
           Streaming live data from CPU/memory metrics obtained through WebSockets ✨
         </p>
 
@@ -58,6 +63,7 @@ function App() {
 
       </div>
     </div>
+    </>
   );
 }
 
