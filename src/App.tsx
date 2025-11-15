@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
 import {useWebSocket} from "./useWebSocket";
 import { MetricCards } from './MetricCards';
+import { motion } from "framer-motion";
+
 
 import './App.css'
 
@@ -11,6 +13,21 @@ function App() {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
+
+      <motion.div
+        className="absolute top-10 right-10 text-4xl"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      > ✨
+      </motion.div>
+
+      <motion.div
+        className="absolute bottom-10 left-10 text-4xl"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+      >
+        🌸
+      </motion.div>
       <div className="bg-white/70 backdrop-blur-xl shadow-2xl rounded-3xl p-10 w-full max-w-4xl border border-white/50">
 
         <h1 className="text-4xl font-extrabold text-center mb-6 bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent">
